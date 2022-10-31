@@ -1,0 +1,10 @@
+.screen-search {
+    width: 196px;
+    height: 220px;
+    position: relative;
+    left: 432px;
+    bottom: 451px;
+    border-radius: 9px;
+    border: 1px solid black;
+    background-color: #6fef52;
+}
