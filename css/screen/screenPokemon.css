@@ -16,6 +16,7 @@
     height: 99px;
     position: relative;
     left: 104px;
+    bottom: 58px;
 }
 
 .name {
@@ -40,4 +41,11 @@
     background-color: rgb(255, 166, 0);
     display: grid;
     align-items: center;
+}
+
+.display {
+    position: relative;
+  top: 50px;
+  right: 10px;
+  width: 125px;
 }

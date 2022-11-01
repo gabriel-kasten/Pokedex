@@ -1,10 +1,11 @@
 .screen-search input[type="text"] {
     width: 140px;
     position: relative;
-    top: 20px;
-    left: 20px;
+    top: 35px;
+    left: 4px;
     background-color: transparent;
     border: 0;
+    z-index: 1;
 }
 
 .screen-search input[type="text"]:focus {
