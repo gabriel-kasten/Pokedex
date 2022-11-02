@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.search {
+    margin: 30px;
+}
+
+.info {
+    margin: 30px;
+    display: flex;
+    gap: 30px;
+    width: fit-content;
+}
+
+#pokemon-img {
+    width: 200px;
+    height: 200px;
+
+    border-radius: 25%;
+    border: 5px solid cadetblue;
+    
+    background-color: antiquewhite;
+}
+
+#fields {
+    width: 250px;
+    background-color: burlywood;
+}
