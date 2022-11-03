@@ -1,35 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <div class="search">
-        <input type="text" id="pokemon-input">
-        <button class="search-info" onclick="search_api('pokemon')">search</button>
+  <body>
+    <div class="pokedex">
+      <div class="search-area">
+        <input type="text" id="pokemon-input" />
+        <button class="search-info" onclick="search_api()">
+          search
+        </button>
         <button class="clear-info">clear</button>
-    </div>
+      </div>
 
-    <div class="info">
-        <img id="pokemon-img" src="https://via.placeholder.com/200" alt="pokemon">
+      <div class="info-area">
+        <img id="pokemon-img" src="" />
+
         <div id="fields">
-            <div id="field-1"></div>
-            <div id="field-2"></div>
-            <div id="field-3"></div>
+          <div id="field-1"></div>
+          <div id="field-2"></div>
+          <div id="field-3"></div>
         </div>
+      </div>
 
-        <div class="pokemon-description"></div>
+      <div id="pokemon-description"></div>
+
+      <div class="info-buttons">
+        <button id="prev-button">previous</button>
+        <button id="next-button">next</button>
+      </div>
     </div>
-
     <script src="main.js"></script>
-</body>
-
+  </body>
 </html>
