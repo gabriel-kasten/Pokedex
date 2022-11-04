@@ -20,13 +20,15 @@
   <body>
     <div class="pokedex">
       <div class="search-area">
-        <input type="text" id="pokemon-input"/>
+        <input type="text" id="pokemon-input" />
         <button class="search-info" onclick="search_api()">search</button>
         <button class="save-info">save</button>
       </div>
 
       <div class="info-area">
-        <img id="pokemon-img" src="" />
+        <div class="pokemon-img-wrapper">
+          <img id="pokemon-img" src="static_image/default_img.png" />
+        </div>
 
         <div id="fields">
           <div id="field-1"></div>
@@ -35,11 +37,17 @@
         </div>
       </div>
 
-      <div id="pokemon-description"></div>
+      <div class="description"><p id="pokemon-description"></p></div>
 
       <div class="info-buttons">
         <button id="prev-button">previous</button>
         <button id="next-button">next</button>
+      </div>
+
+      <div class="img-controll">
+        <button id="front-button"><</button>
+        <button id="toogle-state-button">o</button>
+        <button id="back-button">></button>
       </div>
     </div>
 

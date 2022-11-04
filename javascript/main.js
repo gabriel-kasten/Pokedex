@@ -11,26 +11,60 @@ let field_3 = document.getElementById('field-3');
 let next_button = document.getElementById('next-button');
 let previous_button = document.getElementById('prev-button');
 
-// img.src = data.sprites.front_default;
+let front_button = document.getElementById('front-button');
+let toogle_state_button = document.getElementById('toogle-state-button');
+let back_button = document.getElementById('back-button');
 
 const search_api = () => {
   let pokemon = document.getElementById('pokemon-input').value;
   pokemon = pokemon.toLowerCase();
 
-  pokemon_data(pokemon);
+  common_data(pokemon);
   description_data(pokemon);
 };
 
-const pokemon_data = (pokemon) => {
+const common_data = (pokemon) => {
   fetch(API_URL + 'pokemon' + '/' + pokemon)
     .then((response) => response.json())
-    .then((data) => pokemon_info(data));
+    .then((data) => distribute_commom_data(data));
 };
 
 const description_data = (pokemon) => {
   fetch(API_URL + 'pokemon-species' + '/' + pokemon)
     .then((response) => response.json())
     .then((data) => description_info(data));
+};
+
+const distribute_commom_data = (data) => {
+  img_info(data);
+  pokemon_info(data);
+};
+
+// pikachu
+
+const img_info = (data) => {
+  let pokemon_id = data.id;
+
+  img.src =
+    '/sprites/sprites/pokemon/versions/generation-v/black-white/animated/' +
+    pokemon_id +
+    '.gif';
+
+  front_button.addEventListener('click', () => {
+    img.src =
+      '/sprites/sprites/pokemon/versions/generation-v/black-white/animated/' +
+      pokemon_id +
+      '.gif';
+  });
+
+  toogle_state_button.addEventListener('click', () => {});
+
+  back_button.addEventListener('click', () => {
+    img.src =
+      '/sprites/sprites/pokemon/versions/generation-v/black-white/animated/back/' +
+      pokemon_id +
+      '.gif';
+  });
 };
 
 const description_info = (data) => {
@@ -94,8 +128,3 @@ const load_data = (i, data) => {
 
   _load_data_dm(i);
 };
-
-// pikachu
-// gastrodon -- dois elementos
-
-// lidar com fetch api error

@@ -7,6 +7,7 @@ body {
 
 input[type='text'] {
   font-family: 'Roboto Mono', monospace;
+  width: 350px;
 }
 
 button {
@@ -15,9 +16,15 @@ button {
   font-family: 'Roboto Mono', monospace;
 }
 
-img {
-  min-width: 200px;
-  min-height: 200px;
+.pokemon-img-wrapper {
+  height: 300px;
+  width: 300px;
+}
+
+.pokemon-img-wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .pokedex {
@@ -42,7 +49,7 @@ img {
   gap: 5px;
 }
 
-#pokemon-description {
+.description {
   padding-left: 15px;
 
   text-overflow: clip;
