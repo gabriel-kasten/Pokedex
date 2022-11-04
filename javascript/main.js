@@ -1,3 +1,4 @@
+// Api base URL
 const API_URL = 'https://pokeapi.co/api/v2/';
 
 // Selecting DOM elements
@@ -7,31 +8,61 @@ let field_1 = document.getElementById('field-1');
 let field_2 = document.getElementById('field-2');
 let field_3 = document.getElementById('field-3');
 
-let pokemon_description = document.getElementById('pokemon-description');
 let next_button = document.getElementById('next-button');
 let previous_button = document.getElementById('prev-button');
 
+// img.src = data.sprites.front_default;
+
 const search_api = () => {
-  // pega o nome do pokemon informado no input
   let pokemon = document.getElementById('pokemon-input').value;
+  pokemon = pokemon.toLowerCase();
 
-  fetch(API_URL + 'pokemon/' + pokemon.toLowerCase())
-    .then((res) => res.json())
-    .then((data) => load_data(data));
-
-  fetch(API_URL + 'pokemon-species/' + pokemon.toLowerCase())
-    .then((res) => res.json())
-    .then(
-      (data) =>
-        (pokemon_description.innerHTML = data.form_descriptions.description)
-    );
+  pokemon_data(pokemon);
+  description_data(pokemon);
 };
 
-const load_data = (data) => {
-  // Mutable data
+const pokemon_data = (pokemon) => {
+  fetch(API_URL + 'pokemon' + '/' + pokemon)
+    .then((response) => response.json())
+    .then((data) => pokemon_info(data));
+};
+
+const description_data = (pokemon) => {
+  fetch(API_URL + 'pokemon-species' + '/' + pokemon)
+    .then((response) => response.json())
+    .then((data) => description_info(data));
+};
+
+const description_info = (data) => {
+  let description_field = document.getElementById('pokemon-description');
+
+  let description = data.flavor_text_entries[0].flavor_text;
+  description_field.innerHTML =
+    description.charAt(0).toUpperCase() +
+    description.slice(1).toLowerCase().replace('\f', ' ');
+};
+
+const pokemon_info = (data) => {
   let i = 1;
 
-  // Constant data
+  next_button.addEventListener('click', () => {
+    if (i < 3) {
+      i += 1;
+      load_data(i, data);
+    }
+  });
+
+  previous_button.addEventListener('click', () => {
+    if (i > 1) {
+      i -= 1;
+      load_data(i, data);
+    }
+  });
+
+  load_data(i, data);
+};
+
+const load_data = (i, data) => {
   const type =
     Object.keys(data.types).length == 2
       ? data.types[0].type.name + ' & ' + data.types[1].type.name
@@ -55,37 +86,16 @@ const load_data = (data) => {
     },
   };
 
-  const load_data_dm = (i) => {
+  const _load_data_dm = (i) => {
     field_1.innerHTML = order_data[i].option_1;
     field_2.innerHTML = order_data[i].option_2;
     field_3.innerHTML = order_data[i].option_3;
   };
 
-  next_button.addEventListener('click', () => {
-    if (i < 3) {
-      i += 1;
-      load_data_dm(i);
-    }
-  });
-
-  previous_button.addEventListener('click', () => {
-    if (i > 1) {
-      i -= 1;
-      load_data_dm(i);
-    }
-  });
-
-  load_data_dm(i);
-
-  img.src = data.sprites.front_default;
+  _load_data_dm(i);
 };
-
-// Object.keys(data.types).length
 
 // pikachu
 // gastrodon -- dois elementos
 
 // lidar com fetch api error
-
-// immutable data
-// const description_field = document.getElementById();
