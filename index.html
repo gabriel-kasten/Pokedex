@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style/style.css" />
-    <title>Pokedex</title>
-  </head>
-  <body>
-    <section>
-      <div class="input-group">
-        <input type="text" class="input-name" />
-        <button class="button-search"></button>
-      </div>
-    </section>
-    <script src="javascript/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="images/favicon-16x16.png" type="image/x-icon">
+  <link rel="stylesheet" href="style/style.css" />
+  <title>Pokedex</title>
+</head>
+
+<body>
+  <section id="search-section">
+    <div class="search-input">
+      <label for="pokemon-input">Pokemon's name</label>
+      <input name="pokemon-input" type="text" id="pokemon-name-input" placeholder="Pokemons's name">
+    </div>
+    <button id="pokemon-search-button">Search</button>
+  </section>
+  <section id="display-pokemon-info"></section>
+  <section id="display-pokemon-cards"></section>
+
+  <script src="javascript/main.js"></script>
+</body>
+
 </html>
