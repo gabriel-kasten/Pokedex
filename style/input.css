@@ -1,0 +1,31 @@
+#search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-input {
+    display: flex;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.search-input input {
+    outline: none;
+    border: none;
+    height: 100%;
+    padding-left: 15px;
+}
+
+.search-input button {
+    padding: 5px;
+    height: 100%;
+    border: none;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.search-input i {
+    position: relative;
+    right: 10px;
+}

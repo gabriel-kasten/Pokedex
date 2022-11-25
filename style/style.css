@@ -1,0 +1,31 @@
+@import url(input.css);
+
+* {
+    padding: 0;
+    margin: 0;
+
+    overflow: hidden;
+}
+
+#search-section {
+    background-color: rgb(229, 126, 243);
+    width: 100%;
+    height: 150px;
+}
+
+#display-pokemon-info {
+    background-color: rgb(109, 238, 105);
+    width: 50%;
+    height: 100vh;
+}
+
+#display-pokemon-cards {
+    background-color: rgb(255, 187, 98);
+    width: 50%;
+    height: 100vh;
+}
+
+.display {
+    display: flex;
+}
+
